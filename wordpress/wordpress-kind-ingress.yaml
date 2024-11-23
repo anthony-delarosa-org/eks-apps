@@ -5,9 +5,7 @@ metadata:
   namespace: wordpress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
-  ingressClassName: nginx
   rules:
   - host: wordpress.d3vops.org
     http:

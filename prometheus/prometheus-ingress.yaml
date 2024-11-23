@@ -1,21 +1,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: wordpress
-  namespace: wordpress
+  name: prometheus
+  namespace: prometheus
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   ingressClassName: nginx
   rules:
-  - host: wordpress.d3vops.org
+  - host: prometheus.d3vops.org
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: wordpress
+            name: prometheus-server
             port:
               number: 80

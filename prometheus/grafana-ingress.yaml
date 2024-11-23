@@ -1,21 +1,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: wordpress
-  namespace: wordpress
+  name: grafana
+  namespace: grafana
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
 spec:
   ingressClassName: nginx
   rules:
-  - host: wordpress.d3vops.org
+  - host: grafana.d3vops.org
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: wordpress
+            name: grafana-prometheus-stack
             port:
               number: 80
