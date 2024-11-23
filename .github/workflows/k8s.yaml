@@ -55,3 +55,12 @@ jobs:
         run: | 
           ls -la
  
+      # Apply Manifest
+      - name: Get Files
+        run: | 
+          kubectl apply -f prometheus/grafana-ingress.yaml
+    
+      # Display Ingress
+      - name: Get Files
+        run: | 
+          kubectl get ingress -A
