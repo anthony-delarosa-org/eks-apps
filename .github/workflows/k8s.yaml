@@ -36,5 +36,5 @@ jobs:
       # Kubectl CLI
       - uses: azure/setup-kubectl@v4
         with:
-           version: 'v.129.0' # default is latest stable
+           version: 'v.1.29.0' # default is latest stable
         id: install
