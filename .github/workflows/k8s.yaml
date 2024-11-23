@@ -49,3 +49,9 @@ jobs:
       - name: Get Nodes Info
         run: | 
           kubectl get nodes -o wide
+
+      # List Files
+      - name: Get Files
+        run: | 
+          ls -la
+ 
